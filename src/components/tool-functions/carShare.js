@@ -1,8 +1,8 @@
 import {Typography} from '@mui/material'
 
 const carShare = (result) => {
-	const [mpg, distance, fuelPrice, people] = result
-
+	const [mpg, fuelPrice, distance, people] = result
+	console.log(mpg, distance, fuelPrice, people)
 	const milesPerLitre = Number(mpg) / 4.546
 	const poundPerLitre = Number(fuelPrice / 100) / milesPerLitre
 
