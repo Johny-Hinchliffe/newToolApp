@@ -29,9 +29,9 @@ export default function Homepage() {
 				<Typography
 					sx={{
 						marginBottom: '10%',
-						color: '#fff',
-						textShadow:
-							'1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
+						color: 'primary',
+						// textShadow:
+						// 	'1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
 					}}
 					variant="subtitle2"
 				>
