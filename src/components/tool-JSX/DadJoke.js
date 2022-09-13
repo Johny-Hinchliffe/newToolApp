@@ -8,9 +8,20 @@ import {
 	Container,
 } from '@mui/material'
 
-import React from 'react'
+import * as React from 'react'
+
+import Switch from '@mui/material/Switch'
+import Paper from '@mui/material/Paper'
+import Slide from '@mui/material/Slide'
+import FormControlLabel from '@mui/material/FormControlLabel'
 
 const DadJoke = () => {
+	const [checked, setChecked] = React.useState(false)
+
+	const handleChange = () => {
+		setChecked((prev) => !prev)
+	}
+
 	const bull = (
 		<Box
 			component="span"
@@ -18,6 +29,22 @@ const DadJoke = () => {
 		>
 			•
 		</Box>
+	)
+
+	const icon = (
+		<Paper sx={{ m: 1 }} elevation={4}>
+			<Box component="svg" sx={{ width: 100, height: 100 }}>
+				<Box
+					component="polygon"
+					sx={{
+						fill: (theme) => theme.palette.common.white,
+						stroke: (theme) => theme.palette.divider,
+						strokeWidth: 1,
+					}}
+					points="0,100 50,00, 100,100"
+				/>
+			</Box>
+		</Paper>
 	)
 
 	const card = (
@@ -51,6 +78,17 @@ const DadJoke = () => {
 			</Typography>
 			<Container>
 				<Card variant="outlined">{card}</Card>
+				<Box sx={{ height: 180 }}>
+					<Box sx={{ width: `calc(100px + 16px)` }}>
+						<FormControlLabel
+							control={<Switch checked={checked} onChange={handleChange} />}
+							label="Show"
+						/>
+						<Slide direction="right" in={checked} mountOnEnter unmountOnExit>
+							{icon}
+						</Slide>
+					</Box>
+				</Box>
 			</Container>
 		</>
 	)

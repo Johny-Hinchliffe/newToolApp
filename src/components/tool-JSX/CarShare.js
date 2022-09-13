@@ -7,7 +7,6 @@ import carShare from '../tool-functions/carShare'
 
 const CarShare = () => {
 	const [result, setResult] = useState([])
-
 	const answer = carShare(result)
 
 	const results = (
@@ -43,18 +42,23 @@ const CarShare = () => {
 					name: 'miles',
 					inputProp: 'miles',
 					type: 'number',
+					increase: "0.01"
 				},
 				{
 					label: 'Cost per litre (169.9)',
 					variant: 'standard',
 					inputProp: 'p',
 					name: 'cost',
+					type: 'input',
+					increase: "0.01"
 				},
 				{
 					label: 'Miles Per Gallon',
 					variant: 'standard',
 					inputProp: 'mpg',
 					name: 'mpg',
+					type: 'input',
+					increase: "0.01"
 				},
 				{
 					label: 'Splitting between..',

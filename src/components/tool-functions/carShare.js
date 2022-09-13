@@ -1,10 +1,14 @@
 import {Typography} from '@mui/material'
 
 const carShare = (result) => {
-	const [mpg, fuelPrice, distance, people] = result
-	console.log(mpg, distance, fuelPrice, people)
-	const milesPerLitre = Number(mpg) / 4.546
-	const poundPerLitre = Number(fuelPrice / 100) / milesPerLitre
+	const [distance, fuelPrice, mpg, people] = result
+
+	
+	const milesPerLitre = mpg / 4.546 //8.183
+	const poundPerLitre = fuelPrice / 100 / milesPerLitre
+console.log('distance', distance,'fuel', fuelPrice,'mpg', mpg, 'people', people)
+console.log('milesPerLitre', milesPerLitre)
+console.log('poundPerLitre', poundPerLitre)
 
 	const journeyCost = distance * poundPerLitre
 	const round = (el) => Math.ceil(el * 10) / 10

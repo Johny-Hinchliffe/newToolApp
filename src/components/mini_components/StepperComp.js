@@ -13,6 +13,7 @@ import {
 	Card,
 	CardContent,
 	InputAdornment,
+	Input
 } from '@mui/material'
 
 export default function StepperComp({
@@ -94,14 +95,16 @@ export default function StepperComp({
 											type={step.type}
 											error={Object.keys(error).length > 0 && !error[step.name]}
 											onChange={() => setError({})}
+											inputProps={{step: step.increase}}
 											InputProps={{
+										
 												endAdornment: (
 													<InputAdornment position="start">
 														{step.inputProp}
 													</InputAdornment>
 												),
 											}}
-											sx={{ mb: '10px' }}
+											sx={{ mb: '10px'}}
 										/>
 									)
 								})}
