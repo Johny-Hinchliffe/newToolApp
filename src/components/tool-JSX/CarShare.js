@@ -49,7 +49,7 @@ const CarShare = () => {
 					variant: 'standard',
 					inputProp: 'p',
 					name: 'cost',
-					type: 'input',
+					type: 'number',
 					increase: "0.01"
 				},
 				{
@@ -57,7 +57,7 @@ const CarShare = () => {
 					variant: 'standard',
 					inputProp: 'mpg',
 					name: 'mpg',
-					type: 'input',
+					type: 'number',
 					increase: "0.01"
 				},
 				{
