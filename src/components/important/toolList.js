@@ -39,7 +39,7 @@ const toolList = [
         favourite: true
 	},
 	{
-		primary: 'Coin Flip',
+		primary: 'Coin Toss',
 		secondary: 'Heads or Tails?',
 		img: 'https://images.unsplash.com/photo-1610719887095-1c2d1486be5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
 		icon: < MonetizationOnOutlinedIcon color='primary' fontSize='large'/>,

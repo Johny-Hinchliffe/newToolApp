@@ -19,6 +19,8 @@ import PizzaTime from './components/tool-JSX/PizzaTime'
 import AgeCompare from './components/tool-JSX/AgeCompare'
 import CarShare from './components/tool-JSX/CarShare'
 import DadJoke from './components/tool-JSX/DadJoke'
+import CoinFlip from './components/tool-JSX/CoinFlip'
+//import Notepad from './components/tool-JSX/Notepad'
 
 function App() {
 	return (
@@ -33,6 +35,10 @@ function App() {
 							<Route path="/double-age" element={<AgeCompare />} />
 							<Route path="/car-share" element={<CarShare />} />
 							<Route path="/dad-jokes" element={<DadJoke />} />
+							<Route path ="/coin-toss" element={<CoinFlip/>}/>
+							{/* <Route path="/notepad" element={<Notepad />} /> */}
+							
+							
 						</Routes>
 						<BottomNav Drawer={DrawerBar} drawerList={toolList} />
 					</ThemeProvider>

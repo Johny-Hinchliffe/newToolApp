@@ -1,95 +1,39 @@
-import {
-	Typography,
-	Card,
-	CardActions,
-	Box,
-	Button,
-	CardContent,
-	Container,
-} from '@mui/material'
-
-import * as React from 'react'
-
-import Switch from '@mui/material/Switch'
-import Paper from '@mui/material/Paper'
-import Slide from '@mui/material/Slide'
-import FormControlLabel from '@mui/material/FormControlLabel'
+import { useState } from 'react'
+import { Typography } from '@mui/material'
+import PlainPaper from '../mini_components/PlainPaper'
+import Loader from '../mini_components/Loader'
 
 const DadJoke = () => {
-	const [checked, setChecked] = React.useState(false)
+	const [joke, setJoke] = useState('Ready to Laugh?')
 
-	const handleChange = () => {
-		setChecked((prev) => !prev)
+	const jokeGenerator = async () => {
+		const config = {
+			headers: {
+				Accept: 'application/json',
+			},
+		}
+		setJoke('Loader')
+		const res = await fetch('https://icanhazdadjoke.com', config)
+
+		const data = await res.json()
+
+		setTimeout(() => {
+			setJoke(data.joke)
+
+		}, 1000)
 	}
 
-	const bull = (
-		<Box
-			component="span"
-			sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-		>
-			•
-		</Box>
-	)
 
-	const icon = (
-		<Paper sx={{ m: 1 }} elevation={4}>
-			<Box component="svg" sx={{ width: 100, height: 100 }}>
-				<Box
-					component="polygon"
-					sx={{
-						fill: (theme) => theme.palette.common.white,
-						stroke: (theme) => theme.palette.divider,
-						strokeWidth: 1,
-					}}
-					points="0,100 50,00, 100,100"
-				/>
-			</Box>
-		</Paper>
-	)
 
-	const card = (
-		<React.Fragment>
-			<CardContent>
-				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-					Word of the Day
-				</Typography>
-				<Typography variant="h5" component="div">
-					be{bull}nev{bull}o{bull}lent
-				</Typography>
-				<Typography sx={{ mb: 1.5 }} color="text.secondary">
-					adjective
-				</Typography>
-				<Typography variant="body2">
-					well meaning and kindly.
-					<br />
-					{'"a benevolent smile"'}
-				</Typography>
-			</CardContent>
-			<CardActions>
-				<Button size="small">Learn More</Button>
-			</CardActions>
-		</React.Fragment>
+	const layout = (
+		<Typography textAlign='center' variant='h5' sx={{ alignSelf: 'center', justifySelf: 'center' }}>
+			{joke === 'Loader' ? <Loader text={'Finding another joke'}/> : joke}
+		</Typography>
 	)
 
 	return (
 		<>
-			<Typography textAlign="center" variant="h4" margin="25px">
-				Dad Jokes
-			</Typography>
-			<Container>
-				<Card variant="outlined">{card}</Card>
-				<Box sx={{ height: 180 }}>
-					<Box sx={{ width: `calc(100px + 16px)` }}>
-						<FormControlLabel
-							control={<Switch checked={checked} onChange={handleChange} />}
-							label="Show"
-						/>
-						<Slide direction="right" in={checked} mountOnEnter unmountOnExit>
-							{icon}
-						</Slide>
-					</Box>
-				</Box>
-			</Container>
+			<PlainPaper title={'Dad Jokes'} content={layout} func={jokeGenerator} />
 		</>
 	)
 }

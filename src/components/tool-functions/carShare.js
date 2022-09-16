@@ -6,9 +6,6 @@ const carShare = (result) => {
 	
 	const milesPerLitre = mpg / 4.546 //8.183
 	const poundPerLitre = fuelPrice / 100 / milesPerLitre
-console.log('distance', distance,'fuel', fuelPrice,'mpg', mpg, 'people', people)
-console.log('milesPerLitre', milesPerLitre)
-console.log('poundPerLitre', poundPerLitre)
 
 	const journeyCost = distance * poundPerLitre
 	const round = (el) => Math.ceil(el * 10) / 10
