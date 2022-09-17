@@ -20,6 +20,7 @@ import AgeCompare from './components/tool-JSX/AgeCompare'
 import CarShare from './components/tool-JSX/CarShare'
 import DadJoke from './components/tool-JSX/DadJoke'
 import CoinFlip from './components/tool-JSX/CoinFlip'
+import WhosTurn from './components/tool-JSX/WhosTurn'
 //import Notepad from './components/tool-JSX/Notepad'
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
 							<Route path="/car-share" element={<CarShare />} />
 							<Route path="/dad-jokes" element={<DadJoke />} />
 							<Route path ="/coin-toss" element={<CoinFlip/>}/>
+							<Route path ="/whos-turn" element={<WhosTurn/>}/>
+
 							{/* <Route path="/notepad" element={<Notepad />} /> */}
 							
 							

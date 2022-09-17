@@ -22,7 +22,7 @@ export default function StepperComp({
 	content,
 	state,
 	setState,
-	func,
+
 }) {
 	const [activeStep, setActiveStep] = React.useState(0)
 	const [reset, setReset] = React.useState()
@@ -50,12 +50,12 @@ export default function StepperComp({
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		const data = new FormData(event.currentTarget)
-
 		const names = content.map((sections) =>
-			sections.inputs.map((input) => input.name)
+		sections.inputs.map((input) => input.name)
 		)
-
+		
 		const allNames = [].concat(...names)
+		console.log(state)
 
 		const funcArguments = allNames.map((name) => data.get(name))
 		const filteredArguments = funcArguments.filter((el) => el)
@@ -88,6 +88,7 @@ export default function StepperComp({
 									return (
 										<TextField
 											key={step.name}
+											helperText={step.helperText}
 											label={step.label}
 											id="outlined-start-adornment"
 											variant={step.variant}
