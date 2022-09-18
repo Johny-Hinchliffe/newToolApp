@@ -76,7 +76,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "Think of a location the met at: 'at...'",
+			label: "Where did they meet? 'They met at...'",
 			inputs: [
 				{
 					label: 'the park, Ikea, the zoo...',
@@ -88,7 +88,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "Why did they go there? 'to...'",
+			label: "What did they do there? 'to...'",
 			inputs: [
 				{
 					label: 'play football, eat chocolate...',
@@ -100,7 +100,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "What did he wear? Following the word 'He wore...'",
+			label: "What did he wear?'He wore...'",
 			inputs: [
 				{
 					label: 'leather pants, a cowboy hat...',
@@ -112,7 +112,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "What did she wear? Following the word 'She wore...'",
+			label: "What did she wear? 'She wore...'",
 			inputs: [
 				{
 					label: 'a dinosaur costume, a dress...',
@@ -124,7 +124,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "What did he do? Following the word 'He...'",
+			label: "What did he do? 'He...'",
 			inputs: [
 				{
 					label: 'combed his hair, ate icecream...',
@@ -136,7 +136,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "What did she do? Following the word 'She...'",
+			label: "What did she do? 'She...'",
 			inputs: [
 				{
 					label: 'punched a dog, drank some juice...',
@@ -148,7 +148,7 @@ const Consequence = () => {
 			],
 		},
 		{
-			label: "What was the result of this, 'In the end...'",
+			label: "Think of a lovely ending. 'In the end...'",
 			inputs: [
 				{
 					label: 'They started a flamingo zoo',
