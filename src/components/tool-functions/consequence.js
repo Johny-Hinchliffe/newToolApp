@@ -20,15 +20,13 @@ const consequence = (answers) => {
 	return (
 		<>
 			<Typography textAlign="center" variant="subtitle1">
-				The story begins when {answers[0]} {answers[1]} met {answers[2]}
-				{answers[3]} at {answers[4]} to {answers[5]}.
+				The story begins when {answers[0].toLowerCase()} {answers[1]} met {answers[2].toLowerCase()} {answers[3]} at {answers[4].toLowerCase()} to {answers[5].toLowerCase()}.
 			</Typography>
 			<Typography textAlign="center" variant="subtitle1">
-				He wore {answers[6]} and she wore {answers[7]}. All of a sudden he{' '}
-				{answers[8]} and she decided to {answers[9]}.
+				He wore {answers[6].toLowerCase()} and she wore {answers[7].toLowerCase()}, but all of a sudden he {answers[8].toLowerCase()} and she decided to {answers[9].toLowerCase()}.
 			</Typography>
 			<Typography textAlign="center" variant="subtitle1">
-				In the end {answers[10]} and the world said '{answers[11]}'
+				In the end {answers[10].toLowerCase()} and the world said '{answers[11]}'
 			</Typography>
 		</>
 	)

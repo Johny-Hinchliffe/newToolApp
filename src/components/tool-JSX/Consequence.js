@@ -115,7 +115,7 @@ const Consequence = () => {
 			label: "What did she wear? Following the word 'She wore...'",
 			inputs: [
 				{
-					label: 'a dinosaure costume, a dress...',
+					label: 'a dinosaur costume, a dress...',
 					variant: 'standard',
 
 					name: 'clothes2',
