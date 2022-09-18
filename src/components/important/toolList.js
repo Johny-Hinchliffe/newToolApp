@@ -5,8 +5,12 @@ import {
 	Settings as SettingsIcon,
 	MonetizationOnOutlined as MonetizationOnOutlinedIcon,
 	LocalGasStation as LocalGasStationIcon,
-	Hail as HailIcon
+	Hail as HailIcon,
+	AutoStoriesOutlined as AutoStoriesOutlinedIcon 
+
 } from '@mui/icons-material'
+
+
 
 const toolList = [
 	{
@@ -47,9 +51,16 @@ const toolList = [
 	},
 	{
 		primary: 'Whos Turn',
-		secondary: 'Randomly choose between you.',
+		secondary: 'Randomly choose between you',
 		img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
 		icon: <HailIcon color='primary' fontSize='large'/>,
+        favourite: false
+	},
+	{
+		primary: 'Story Game',
+		secondary: 'Take it in turns to make a truly random story',
+		img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+		icon: <AutoStoriesOutlinedIcon  color='primary' fontSize='large'/>,
         favourite: false
 	},
 ]

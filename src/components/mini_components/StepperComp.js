@@ -139,7 +139,7 @@ export default function StepperComp({
 	})
 
 	return (
-		<Box sx={{ maxWidth: 400, minWidth: 350 }}>
+		<Box sx={{ maxWidth: 400, minWidth: 350}}>
 			<Typography textAlign="center" variant="h4" margin="25px">
 				{title}
 			</Typography>
