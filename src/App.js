@@ -21,10 +21,15 @@ import CarShare from './components/tool-JSX/CarShare'
 import DadJoke from './components/tool-JSX/DadJoke'
 import CoinFlip from './components/tool-JSX/CoinFlip'
 import WhosTurn from './components/tool-JSX/WhosTurn'
-//import Notepad from './components/tool-JSX/Notepad'
 import Consequence from './components/tool-JSX/Consequence'
+import TicTacToe from './components/tool-JSX/TicTacToe'
+
+
+//import Notepad from './components/tool-JSX/Notepad'
+//import offensiveJoke from './components/tool-functions/offensiveJoke'
 
 function App() {
+
 	return (
 		<div className="App">
 			<BrowserRouter>
@@ -40,7 +45,8 @@ function App() {
 							<Route path ="/coin-toss" element={<CoinFlip/>}/>
 							<Route path ="/whos-turn" element={<WhosTurn/>}/>
 							<Route path ="/story-game" element={<Consequence/>}/>
-
+							<Route path="/tic-tac-toe" element={<TicTacToe/>}/>
+							{/* <Route path = 'offensive-jokes' element={<offensiveJoke/>}/> */}
 
 							{/* <Route path="/notepad" element={<Notepad />} /> */}
 							

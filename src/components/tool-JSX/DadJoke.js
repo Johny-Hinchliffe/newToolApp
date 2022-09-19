@@ -33,7 +33,7 @@ const DadJoke = () => {
 
 	return (
 		<>
-			<PlainPaper title={'Dad Jokes'} content={layout} func={jokeGenerator} />
+			<PlainPaper title={'Dad Jokes'} content={layout} func={jokeGenerator} button={'Get a Joke'} />
 		</>
 	)
 }

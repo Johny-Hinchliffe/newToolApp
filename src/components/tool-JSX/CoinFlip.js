@@ -100,7 +100,7 @@ export default function CircularIntegration() {
 
 	return (
 		<>
-			<PlainPaper title={'Coin Toss'} content={rotate} func={handleButtonClick} />
+			<PlainPaper title={'Coin Toss'} content={rotate} func={handleButtonClick} button={'Toss the coin'} />
 		</>
 	)
 }

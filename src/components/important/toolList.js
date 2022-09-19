@@ -6,7 +6,8 @@ import {
 	MonetizationOnOutlined as MonetizationOnOutlinedIcon,
 	LocalGasStation as LocalGasStationIcon,
 	Hail as HailIcon,
-	AutoStoriesOutlined as AutoStoriesOutlinedIcon 
+	AutoStoriesOutlined as AutoStoriesOutlinedIcon,
+	CancelOutlined as CancelOutlinedIcon
 
 } from '@mui/icons-material'
 
@@ -63,6 +64,14 @@ const toolList = [
 		icon: <AutoStoriesOutlinedIcon  color='primary' fontSize='large'/>,
         favourite: false
 	},
+	{
+		primary: 'Tic-Tac-Toe',
+		secondary: 'Play a friend at Tic-Tac-Toe',
+		img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+		icon: <CancelOutlinedIcon color='primary' fontSize='large'/>,
+        favourite: false
+	}
+
 ]
 
 export default toolList

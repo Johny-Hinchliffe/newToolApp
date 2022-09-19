@@ -24,6 +24,7 @@ export default function StepperComp({
 	state,
 	setState,
 	func,
+	button
 }) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -70,9 +71,9 @@ export default function StepperComp({
 							height: '40px',
 						}}
 					>
-						<Button onClick={handleSubmit} variant="contained">
-							Reset
-						</Button>
+						{ button ? <Button onClick={handleSubmit} variant="contained">
+							{button}
+						</Button> : null}
 					</Box>
 				</Paper>
 			</Box>
