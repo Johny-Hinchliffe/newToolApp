@@ -23,6 +23,9 @@ import CoinFlip from './components/tool-JSX/CoinFlip'
 import WhosTurn from './components/tool-JSX/WhosTurn'
 import Consequence from './components/tool-JSX/Consequence'
 import TicTacToe from './components/tool-JSX/TicTacToe'
+import SecretSanta from './components/tool-JSX/SecretSanta'
+import TheOfficeGame from './components/tool-JSX/TheOfficeGame'
+import Favourites from './components/mini_components/Favourites'
 
 
 //import Notepad from './components/tool-JSX/Notepad'
@@ -46,6 +49,9 @@ function App() {
 							<Route path ="/whos-turn" element={<WhosTurn/>}/>
 							<Route path ="/story-game" element={<Consequence/>}/>
 							<Route path="/tic-tac-toe" element={<TicTacToe/>}/>
+							<Route path="/secret-santa" element={<SecretSanta/>}/>
+							{/* <Route path="/the-office-game" element={<TheOfficeGame/>}/> */}
+							<Route path='/favourites' element={<Homepage/>}/>
 							{/* <Route path = 'offensive-jokes' element={<offensiveJoke/>}/> */}
 
 							{/* <Route path="/notepad" element={<Notepad />} /> */}

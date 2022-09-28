@@ -6,6 +6,10 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Avatar, Modal } from '@mui/material'
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined'
+
+const FAV_KEY = 'aReAllyG00dKeY19901203'
 
 const style = {
 	position: 'absolute',
@@ -21,12 +25,38 @@ const style = {
 	maxWidth: '70vw',
 }
 
-export default function BasicModal({ content, title, button }) {
+export default function BasicModal({
+	content,
+	title,
+	button,
+	favourites,
+	setFavourites,
+	KEY,
+}) {
 	const [open, setOpen] = React.useState(false)
 	let navigate = useNavigate()
 
 	const handleOpen = () => setOpen(true)
+
 	const handleClose = () => setOpen(false)
+
+	const favouriteClick = () => {
+		if (favourites === [] || !favourites.includes(title)) {
+			console.log('add')
+			const addFavourite = async () => {
+				setFavourites([...favourites, title])
+			}
+			addFavourite()
+		} else {
+			console.log('delete')
+			const deleteFavourite = async () => {
+				setFavourites(favourites.filter((el) => el !== title))
+			}
+			deleteFavourite()
+		}
+
+	
+	}
 
 	return (
 		<div>
@@ -39,6 +69,7 @@ export default function BasicModal({ content, title, button }) {
 					boxShadow: '3px 3px 5px #000',
 					marginBottom: '5px',
 					border: '0.1px solid grey',
+					cursor: 'pointer',
 				}}
 				variant="square"
 				onClick={handleOpen}
@@ -55,14 +86,22 @@ export default function BasicModal({ content, title, button }) {
 					elevation={24}
 				>
 					<Box sx={style}>
-						<Typography
-							id="modal-modal-title"
-							variant="h5"
-							component="h2"
-							textAlign="center"
-						>
-							{title}
-						</Typography>
+						<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+							<ClearOutlinedIcon sx={{ color: 'transparent' }} />
+							<Typography
+								id="modal-modal-title"
+								variant="h5"
+								component="h2"
+								textAlign="center"
+							>
+								{title}
+							</Typography>
+							<FavoriteBorderOutlinedIcon
+								sx={{ cursor: 'pointer' }}
+								onClick={favouriteClick}
+							/>
+						</Box>
+
 						<Typography
 							id="modal-modal-description"
 							textAlign="center"
@@ -70,11 +109,15 @@ export default function BasicModal({ content, title, button }) {
 						>
 							{content}
 						</Typography>
-						<Box sx={{ display: 'flex', justifyContent: 'center', mt: 2}}>
-							<Button variant='contained' endIcon={<RocketLaunchIcon />} onClick={() => navigate(`/${title.split(' ').join('-').toLowerCase()}`)}>
-								<Typography>
-									Launch
-								</Typography>	
+						<Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+							<Button
+								variant="contained"
+								endIcon={<RocketLaunchIcon />}
+								onClick={() =>
+									navigate(`/${title.split(' ').join('-').toLowerCase()}`)
+								}
+							>
+								<Typography>Launch</Typography>
 							</Button>
 						</Box>
 					</Box>

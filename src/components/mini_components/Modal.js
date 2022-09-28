@@ -18,7 +18,7 @@ const style = {
 	maxWidth: '70vw'
 }
 
-export default function BasicModal({ content, title, button }) {
+export default function BasicModal({ content, title, button, favourite }) {
 	const [open, setOpen] = React.useState(false)
 	
   const handleOpen = () => setOpen(true)

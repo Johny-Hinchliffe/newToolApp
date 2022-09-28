@@ -42,7 +42,7 @@ export default function CircularIntegration() {
 		const result = options[choice]
 		setResult(result)
 		setImage(result === 'Heads' ? headsImage : tailsImage)
-		console.log(result)
+
 
 		if (!loading) {
 			setSuccess(false)

@@ -4,31 +4,24 @@ import { Container, Typography, Grid } from '@mui/material'
 import toolList from '../important/toolList'
 import ModalHome from './ModalHome'
 
-export default function Homepage() {
-	const [favourites, setFavourites] = useState([])
-	const [newFav, setNewFav] = useState()
+export default function Favourites() {
+    const [favourites, setFavourites] = useState([])
 
-	const FAV_KEY = 'aReAllyG00dKeY19901203'
-	
-	useEffect(() => {
+    const FAV_KEY = 'aReAllyG00dKeY19901203'
+
+    useEffect(() => {
 		const getFavourites = async () => {
 			const favouritesStorage = JSON.parse(localStorage.getItem(FAV_KEY))
 			setFavourites(favouritesStorage)
-			console.log(favouritesStorage)
 		}
 		getFavourites()
-		
-		
 	}, [])
-	
-	console.log(favourites)
-	
 
 	useEffect(() => {
-
-		console.log(favourites)
 		localStorage.setItem(FAV_KEY, JSON.stringify(favourites))
 	}, [favourites])
+
+
 
 	// Fetch tasks
 	// const fetchFavourites = async () => {
@@ -37,10 +30,20 @@ export default function Homepage() {
 	// 	return data
 	// }
 
-
-	if (window.location.pathname === '/favourites') {
-		
+	//Add Task
+	const addFavourite = async (favourite) => {
+		favourite.id = 1
+		console.log(favourite)
+		setFavourites([...favourites, favourites])
 	}
+
+	//Delete Task List
+	const deleteFavourites = async (id) => {
+		setFavourites(favourites.filter((favourite) => favourite.id !== id))
+	}
+
+
+
 	const list = toolList.map((el) => {
 		return (
 			<Grid
@@ -61,11 +64,7 @@ export default function Homepage() {
 					content={el.secondary}
 					button={el.icon}
 					title={el.primary}
-					favourites={favourites}
-					setFavourites={setFavourites}
-					newFav={newFav}
-					setNewFav={setNewFav}
-					KEY={FAV_KEY}
+					favourite={true}
 				/>
 				<Typography
 					sx={{
@@ -90,17 +89,3 @@ export default function Homepage() {
 		</Container>
 	)
 }
-
-// export default function ResponsiveGrid() {
-//     return (
-//       <Box sx={{ flexGrow: 1 }}>
-//         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-//           {Array.from(Array(6)).map((_, index) => (
-//             <Grid xs={2} sm={4} md={4} key={index}>
-//               <Item>xs=2</Item>
-//             </Grid>
-//           ))}
-//         </Grid>
-//       </Box>
-//     );
-//   }

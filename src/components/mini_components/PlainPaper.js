@@ -18,13 +18,15 @@ import {
 } from '@mui/material'
 
 export default function StepperComp({
-	results,
 	title,
 	content,
-	state,
-	setState,
 	func,
-	button
+	button,
+	otherButton,
+	buttonType,
+	boxType,
+	onSubmit,
+	modal
 }) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -36,7 +38,7 @@ export default function StepperComp({
 			<Typography textAlign="center" variant="h4" margin="25px">
 				{title}
 			</Typography>
-			<Box
+			<Box component={boxType} onSubmit={onSubmit}
 				sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
 			>
 				<Paper
@@ -53,7 +55,7 @@ export default function StepperComp({
 						flexDirection: 'column',
 					}}
 				>
-					<div></div>
+					{otherButton ? otherButton : <div></div>}
 					<Box
 						sx={{
 							display: 'flex',
@@ -71,12 +73,14 @@ export default function StepperComp({
 							height: '40px',
 						}}
 					>
-						{ button ? <Button onClick={handleSubmit} variant="contained">
+						{ button ? <Button type={boxType} onClick={func ? handleSubmit : null} variant="contained">
 							{button}
 						</Button> : null}
+						
 					</Box>
 				</Paper>
 			</Box>
+			{modal}
 		</Container>
 	)
 }
