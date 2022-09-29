@@ -9,7 +9,7 @@ import BasicModal from '../mini_components/BasicModal'
 
 const SecretSanta = () => {
 	const [santaSets, setSantaSets] = useState([[[]]])
-    const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(false)
 
 	const santaPicker = (allNames) => {
 		const namesfirst = allNames.split(',').map((el) => el.trim())
@@ -80,29 +80,38 @@ const SecretSanta = () => {
 		} else {
 			let answer = [{ receiver: undefined }]
 
-			while (answer.filter((el) => el.receiver === undefined).length > 0) {
-				console.log('ran')
+			while (
+				answer.filter((el) => el.receiver === undefined).length > 0 ||
+				answer.filter(
+					(el) =>
+						(el.buyer === 'Johny' && el.receiver === 'Bri') ||
+						(el.buyer === 'Bri' && el.receiver === 'Johny') ||
+						(el.buyer === 'Johny' && el.receiver === 'Brianna') ||
+						(el.buyer === 'Brianna' && el.receiver === 'Johny') ||
+						(el.buyer === 'Michael' && el.receiver === 'Laura') ||
+						(el.buyer === 'Laura' && el.receiver === 'Michael') ||
+						(el.buyer === 'Mum' && el.receiver === 'Matt') ||
+						(el.buyer === 'Matt' && el.receiver === 'Mum')
+				) > 0
+			) {
 				answer = santaPicker(allPlayers)
 			}
 
-            setSantaSets(answer)
-            setOpen(true)
-			
+			setSantaSets(answer)
+			setOpen(true)
 		}
 	}
 
 	const content = (
-        <>
-		<TextField
-			fullWidth
-			label="Name1, Name2, Name3, etc"
-			id="fullWidth"
-			name="names"
-		/>
-        </>
+		<>
+			<TextField
+				fullWidth
+				label="Name1, Name2, Name3, etc"
+				id="fullWidth"
+				name="names"
+			/>
+		</>
 	)
-
-
 
 	return (
 		<PlainPaper
@@ -112,7 +121,7 @@ const SecretSanta = () => {
 			boxType="form"
 			content={content}
 			onSubmit={handleSubmit}
-            modal={<Modal open={open} setOpen={setOpen} results={santaSets}/>}
+			modal={<Modal open={open} setOpen={setOpen} results={santaSets} />}
 		/>
 	)
 }
