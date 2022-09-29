@@ -92,7 +92,7 @@ const SecretSanta = () => {
 						(el.buyer === 'Laura' && el.receiver === 'Michael') ||
 						(el.buyer === 'Mum' && el.receiver === 'Matt') ||
 						(el.buyer === 'Matt' && el.receiver === 'Mum')
-				) > 0
+				).length > 0
 			) {
 				answer = santaPicker(allPlayers)
 			}
