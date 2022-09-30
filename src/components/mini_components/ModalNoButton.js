@@ -29,21 +29,20 @@ const style = {
 export default function BasicModal({ open, setOpen, results }) {
 	const [pairCount, setPairCount] = useState(0)
 	const [three, setThree] = useState(0)
-	const [showNames, setShowNames] = useState(false)
+	const [showNames, setShowNames] = useState(true)
 
-	const handleOpen = () => {
-        setShowNames(true)
-        setOpen(true)
-    }
+	// const handleOpen = () => {
+    //     setShowNames(true)
+    //     setOpen(true)
+    // }
 	const handleClose = (event, reason) => {
 		if (reason !== 'backdropClick') {
+			setShowNames(true)
 			setOpen(false)
 		}
 	}
 
-	useEffect(() => {
-		setShowNames(true)
-	}, [])
+	
 
 	const nextPerson = () => {
 		if (three < 2) {

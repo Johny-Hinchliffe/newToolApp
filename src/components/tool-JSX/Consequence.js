@@ -4,6 +4,7 @@ import { Container, Typography } from '@mui/material'
 
 import Stepper from '../mini_components/StepperComp'
 import consequence from '../tool-functions/consequence'
+import Tabs from '../mini_components/Tabs'
 
 const Consequence = () => {
 	const [result, setResult] = useState([])
@@ -185,6 +186,7 @@ const Consequence = () => {
 		>
 			<Stepper
 				title={'Story Game'}
+				//tabs={<Tabs tabs={['Store 1', 'Story 2', 'Story 3', 'Story 4', 'Story 5', 'Story 6']} tabPanel={['1', '2']}/>}
 				content={content}
 				results={results}
 				state={result}

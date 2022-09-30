@@ -22,6 +22,7 @@ export default function StepperComp({
 	content,
 	state,
 	setState,
+	tabs
 
 }) {
 	const [activeStep, setActiveStep] = React.useState(0)
@@ -143,6 +144,7 @@ export default function StepperComp({
 			<Typography textAlign="center" variant="h4" margin="25px">
 				{title}
 			</Typography>
+			{tabs}
 
 			<Stepper activeStep={activeStep} orientation="vertical">
 				{inputs}
