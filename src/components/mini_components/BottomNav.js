@@ -8,17 +8,19 @@ import HomeIcon from '@mui/icons-material/Home'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import MenuIcon from '@mui/icons-material/Menu'
 import Paper from '@mui/material/Paper'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemText from '@mui/material/ListItemText'
-import Avatar from '@mui/material/Avatar'
 
-import MainContext from '../../contexts/MainContext'
+import Button from '@mui/material/Button'
+import CancelIcon from '@mui/icons-material/Cancel'
+import SendIcon from '@mui/icons-material/Send'
+import Stack from '@mui/material/Stack'
+
+import Modal from './ModalBasic'
 
 export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 	const [drawerState, setDrawerState] = useState(false)
 	const [value, setValue] = useState(0)
+	const [open, setOpen] = useState(false)
+
 	const ref = useRef(null)
 	let navigate = useNavigate()
 
@@ -30,6 +32,42 @@ export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 			return Content2
 		}
 	}
+
+	const homeNav = () => {
+		if (window.location.pathname == '/') {
+			return
+		} else {
+			setOpen(true)
+		}
+	}
+
+	const handleSubmit = () => {
+		navigate('/')
+		setOpen(false)
+
+
+	}
+
+	const modalContent = (
+		<Box
+			sx={{ mt: 5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+		>
+			<Button
+				variant="contained"
+				endIcon={<HomeIcon />}
+				onClick={handleSubmit}
+			>
+				Go
+			</Button>
+			<Button 
+				variant="outlined"
+				startIcon={<CancelIcon />}
+				onClick={() => setOpen(false)}
+			>
+				Stay
+			</Button>
+		</Box>
+	)
 
 	return (
 		<Box sx={{ pb: 7 }} ref={ref}>
@@ -58,13 +96,12 @@ export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 				>
 					<BottomNavigationAction
 						label="Home"
-						onClick={() => navigate('/')}
+						onClick={homeNav}
 						icon={<HomeIcon />}
-					
 					/>
 					<BottomNavigationAction
 						label="Favourites"
-						onClick={() => navigate('/favourites')}
+						// onClick={() => navigate('/favourites')}
 						icon={<FavoriteIcon />}
 					/>
 					<BottomNavigationAction
@@ -79,6 +116,12 @@ export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 						setDrawerState={setDrawerState}
 					/>
 				</BottomNavigation>
+				<Modal
+					open={open}
+					setOpen={setOpen}
+					content={modalContent}
+					title="Go to the Homescreen"
+				/>
 			</Paper>
 		</Box>
 	)

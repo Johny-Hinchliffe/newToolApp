@@ -26,7 +26,8 @@ export default function StepperComp({
 	buttonType,
 	boxType,
 	onSubmit,
-	modal
+	modal, 
+	tabs
 }) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -55,6 +56,7 @@ export default function StepperComp({
 						flexDirection: 'column',
 					}}
 				>
+					{tabs}
 					{otherButton ? otherButton : <div></div>}
 					<Box
 						sx={{

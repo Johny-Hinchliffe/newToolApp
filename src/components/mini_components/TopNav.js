@@ -71,7 +71,7 @@ export default function TopNav({ logo, title }) {
 				<Toolbar>
 					<Box
 						component="img"
-						onClick={() => navigate(`/`)}
+						// onClick={() => navigate(`/`)}
 						sx={{
 							height: 55,
 							width: 62,

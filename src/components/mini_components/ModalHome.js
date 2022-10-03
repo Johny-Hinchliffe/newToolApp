@@ -29,6 +29,9 @@ export default function BasicModal({
 	content,
 	title,
 	button,
+	buttonText,
+	buttonIcon,
+	secondButton,
 	favourites,
 	setFavourites,
 	KEY,
@@ -112,13 +115,14 @@ export default function BasicModal({
 						<Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
 							<Button
 								variant="contained"
-								endIcon={<RocketLaunchIcon />}
+								endIcon={buttonIcon ? buttonIcon : <RocketLaunchIcon />}
 								onClick={() =>
 									navigate(`/${title.split(' ').join('-').toLowerCase()}`)
 								}
 							>
-								<Typography>Launch</Typography>
+								<Typography>{buttonText ? buttonText : 'Launch'}</Typography>
 							</Button>
+							{secondButton}
 						</Box>
 					</Box>
 				</Modal>

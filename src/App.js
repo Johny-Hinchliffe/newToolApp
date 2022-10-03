@@ -22,6 +22,8 @@ import DadJoke from './components/tool-JSX/DadJoke'
 import CoinFlip from './components/tool-JSX/CoinFlip'
 import WhosTurn from './components/tool-JSX/WhosTurn'
 import Consequence from './components/tool-JSX/Consequence'
+import Consequence2 from './components/tool-JSX/Consequence2'
+
 import TicTacToe from './components/tool-JSX/TicTacToe'
 import SecretSanta from './components/tool-JSX/SecretSanta'
 import TheOfficeGame from './components/tool-JSX/TheOfficeGame'
@@ -48,6 +50,8 @@ function App() {
 							<Route path ="/coin-toss" element={<CoinFlip/>}/>
 							<Route path ="/whos-turn" element={<WhosTurn/>}/>
 							<Route path ="/story-game" element={<Consequence/>}/>
+							{/* <Route path ="/story-game-2" element={<Consequence2/>}/> */}
+
 							<Route path="/tic-tac-toe" element={<TicTacToe/>}/>
 							<Route path="/secret-santa" element={<SecretSanta/>}/>
 							{/* <Route path="/the-office-game" element={<TheOfficeGame/>}/> */}

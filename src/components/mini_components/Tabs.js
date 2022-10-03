@@ -49,21 +49,48 @@ export default function ScrollableTabsButtonAuto({tabs, tabPanels}) {
   };
 
   return (
-    <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}>
+    //<Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}>
+    <Box sx={{ width: '100%' }}>
+       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+
       <Tabs
         value={value}
         onChange={handleChange}
         variant="scrollable"
         scrollButtons="auto"
         aria-label="scrollable auto tabs example"
-      >
-
-        {tabs?.map((tab, i) => <Tab label={tab} />)}
+        >
+        {tabs?.map((tab, i) => <Tab label={tab} {...a11yProps(i)} />)}
       </Tabs>
-        {tabPanels?.map((tabPanel, i) =>  <TabPanel value={value} index={i} dir={'rtl'}>
+        </Box>
+        {tabPanels?.map((tabPanel, i) =>  <TabPanel value={value} index={i} >
           {tabPanel}
         </TabPanel>)}
      
+         
     </Box>
   );
 }
+
+//   return (
+//     <Box sx={{ width: '100%' }}>
+//       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+//         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+//           <Tab label="Item One"  />
+//           <Tab label="Item Two" />
+//           <Tab label="Item Three" />
+//         </Tabs>
+//       </Box>
+//       <TabPanel value={value} index={0}>
+//         Item One
+//       </TabPanel>
+//       <TabPanel value={value} index={1}>
+//         Item Two
+//       </TabPanel>
+//       <TabPanel value={value} index={2}>
+//         Item Three
+//       </TabPanel>
+//     </Box>
+//   );
+// }
+
