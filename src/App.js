@@ -50,7 +50,7 @@ function App() {
 							<Route path ="/coin-toss" element={<CoinFlip/>}/>
 							<Route path ="/whos-turn" element={<WhosTurn/>}/>
 							<Route path ="/story-game" element={<Consequence/>}/>
-							{/* <Route path ="/story-game-2" element={<Consequence2/>}/> */}
+							<Route path ="/story-game-2" element={<Consequence2/>}/>
 
 							<Route path="/tic-tac-toe" element={<TicTacToe/>}/>
 							<Route path="/secret-santa" element={<SecretSanta/>}/>

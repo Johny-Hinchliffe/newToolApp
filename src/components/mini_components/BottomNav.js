@@ -50,7 +50,7 @@ export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 
 	const modalContent = (
 		<Box
-			sx={{ mt: 5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+			sx={{ mt: 5, display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}
 		>
 			<Button
 				variant="contained"
@@ -61,7 +61,7 @@ export default function BottomNav({ Content1, Content2, Drawer, drawerList }) {
 			</Button>
 			<Button 
 				variant="outlined"
-				startIcon={<CancelIcon />}
+				endIcon={<CancelIcon />}
 				onClick={() => setOpen(false)}
 			>
 				Stay
